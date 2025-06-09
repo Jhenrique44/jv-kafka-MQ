@@ -1,16 +1,24 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/ms_email_db
+    url: jdbc:postgresql://localhost:5433/ms_email_db
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate:
-      ddl-auto: update
+    ddl-auto: update
     show-sql: true
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+        
+  rabbitmq:
+    rabbitmq:
+    addresses: leopard.lmq.cloudamqp.com
+    username: uyccvdiz
+    password: oxMoVZrmr54hHvPp4Kk_0RAHzn_Zky4S
+    virtual-host: uyccvdiz
+    
 server:
   port: 8080
